@@ -1,0 +1,21 @@
+{
+    "id": "YOUR_ID_HERE",
+    "name": "创建矩形小插件",
+    "version": "0.1.1",
+    "description": "创建矩形.",
+    "summary": "小结这个插件",
+    "languages": ["en"],
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
+    "host": {
+      "app": "XD",
+      "minVersion": "19.0"
+    },
+    "uiEntryPoints": [
+      {
+        "type": "menu",
+        "label": "Create Rectangle",
+        "commandId": "createRectangle"
+      }
+    ]
+  }

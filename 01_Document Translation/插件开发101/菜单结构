@@ -1,0 +1,50 @@
+## 插件菜单结构
+在你的mainfest.json中，[uiEntryPoints]字段是对象数组，包括您的插件可用的所有UI入口点。此数组中列出的所有条目都显示在本机菜单栏的"插件"菜单和"插件启动板"侧栏面板中。让我们了解这些项目如何在XD中。
+
+## 顶级等级名称
+不管uiEntryPoints数组中有多少个主题，XD都会始终使用插件名称作为UI中插件的顶层标签，例如，如果你有"Plugin Name"作为你插件名称放在你的mainfest.json中：
+```
+"name":"Plugin Name"
+```
+![avator](/01_开发者文档/Adobe&#32;插件开发平台/Link_Img/menu-plugin-name.png)
+
+
+XD会显示这些名称在顶部的插件启动项中：
+
+
+## 子菜单名称
+因此您在uiEntryPoints中指定的标签在哪里？例如，如果你有一个标签有一个modal-dialog命令以及一个面板：
+```
+"uiEntryPoints": [
+    {
+        "type": "menu",
+        "label": "This is a modal",
+        "commandId": "test"
+    },
+    {
+        "type": "panel",
+        "label": "this is a panel",
+        "panelId": "enlargeRectangle"
+    }
+]
+```
+![avator](/01_开发者文档/Adobe&#32;插件开发平台/Link_Img/menu-plugin-labels.png)
+
+## 单个条目插件
+如果你的插件中仅仅uiEntryPoints数组中有一个条目，[label]会被忽略。在插件名称下嵌套了一个子菜单项。XD会简单的显示插件名称作为一个直接的顶级菜单，它是触发插件的一个入口点。例如：
+```
+"uiEntryPoints":[
+    {
+        "type":"panel",
+        "label":"this is a panel (Ignored)",
+        "panelId":"enlargeRectangle"
+    }
+]
+```
+
+由于[uiEntryPoints]数组中只有一个条目，XD会忽略[标签]并且在顶部菜单兰显示插件名称。
+
+![avator](/01_开发者文档/Adobe&#32;插件开发平台/Link_Img/panel-plugin-one-label.png)
+
+
+
